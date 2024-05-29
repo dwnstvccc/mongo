@@ -1,0 +1,148 @@
+Please enter a MongoDB connection string (Default: mongodb://localhost/): mongodb://localhost:27017/
+mongodb://localhost:27017/
+Current Mongosh Log ID: 6657a192e1aa632596cdcdf5
+Connecting to:          mongodb://localhost:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.6
+Using MongoDB:          7.0.9
+Using Mongosh:          2.2.6
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+------
+   The server generated these startup warnings when booting
+   2024-05-29T16:13:53.748-05:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> show databases
+admin    40.00 KiB
+config  108.00 KiB
+local    72.00 KiB
+test> use inventario
+switched to db inventario
+inventario> show databases
+admin    40.00 KiB
+config  108.00 KiB
+local    72.00 KiB
+inventario> var clientes = { genero: 'M', nombre_cliente: 'luis martinez', direccion_cliente: 'Calle Sol 789', localidad_y_codigo_postal: 'Madrid, 28001', telefono_cliente: '+34 91 987 6543', correo_cliente: 'luis@hotmail.com', fecha_de_compra: '2004-05-10' }
+
+inventario> db.usuarios,insertOne(clientes)
+ReferenceError: insertOne is not defined
+inventario> db.usuarios.insertOne(clientes)
+{
+  acknowledged: true,
+  insertedId: ObjectId('6657a60de1aa632596cdcdf6')
+}
+inventario> db.usuarios.find
+[Function: find] AsyncFunction {
+  returnsPromise: true,
+  apiVersions: [ 1, Infinity ],
+  returnType: 'Cursor',
+  serverVersions: [ '0.0.0', '999.999.999' ],
+  topologies: [ 'ReplSet', 'Sharded', 'LoadBalanced', 'Standalone' ],
+  deprecated: false,
+  platforms: [ 'Compass', 'Browser', 'CLI' ],
+  isDirectShellCommand: false,
+  acceptsRawInput: false,
+  shellCommandCompleter: undefined,
+  help: [Function (anonymous)] Help
+}
+inventario> db.usuarios.find()
+[
+  {
+    _id: ObjectId('6657a60de1aa632596cdcdf6'),
+    genero: 'M',
+    nombre_cliente: 'luis martinez',
+    direccion_cliente: 'Calle Sol 789',
+    localidad_y_codigo_postal: 'Madrid, 28001',
+    telefono_cliente: '+34 91 987 6543',
+    correo_cliente: 'luis@hotmail.com',
+    fecha_de_compra: '2004-05-10'
+  }
+]
+inventario> show databases
+admin        40.00 KiB
+config      108.00 KiB
+inventario   40.00 KiB
+local        72.00 KiB
+]
+inventario> show databases
+admin        40.00 KiB
+config      108.00 KiB
+inventario   40.00 KiB
+local        72.00 KiB
+inventario> var productos = { nombre_producto: 'arroz', precio: '2.99', stock: '500', descripcion_producto: 'Arroz blanco de grano largo, ideal para acompañar platos principales' }
+
+inventario> db.usuarios.insertOne(productos)
+{
+  acknowledged: true,
+  insertedId: ObjectId('6657b284e1aa632596cdcdf7')
+}
+inventario> db.usuarios.find()
+[
+  {
+    _id: ObjectId('6657a60de1aa632596cdcdf6'),
+    genero: 'M',
+    nombre_cliente: 'luis martinez',
+    direccion_cliente: 'Calle Sol 789',
+    localidad_y_codigo_postal: 'Madrid, 28001',
+    telefono_cliente: '+34 91 987 6543',
+    correo_cliente: 'luis@hotmail.com',
+    fecha_de_compra: '2004-05-10'
+  },
+  {
+    _id: ObjectId('6657b284e1aa632596cdcdf7'),
+    nombre_producto: 'arroz',
+    precio: '2.99',
+    stock: '500',
+    descripcion_producto: 'Arroz blanco de grano largo, ideal para acompañar platos principales'
+  }
+]
+inventario> var sede = { nombre_sede: 'Main Street Branch', direccion_sede: '123 Main Street', ciudad_sede: 'New York City' }
+
+inventario> db.usuarios.insertOne(sede
+...
+...
+... )
+{
+  acknowledged: true,
+  insertedId: ObjectId('6657b309e1aa632596cdcdf8')
+}
+inventario> db.usuarios.find()
+[
+  {
+    _id: ObjectId('6657a60de1aa632596cdcdf6'),
+    genero: 'M',
+    nombre_cliente: 'luis martinez',
+    direccion_cliente: 'Calle Sol 789',
+    localidad_y_codigo_postal: 'Madrid, 28001',
+    telefono_cliente: '+34 91 987 6543',
+    correo_cliente: 'luis@hotmail.com',
+    fecha_de_compra: '2004-05-10'
+  },
+  {
+    _id: ObjectId('6657b284e1aa632596cdcdf7'),
+    nombre_producto: 'arroz',
+    precio: '2.99',
+    stock: '500',
+    descripcion_producto: 'Arroz blanco de grano largo, ideal para acompañar platos principales'
+  },
+  {
+    _id: ObjectId('6657b309e1aa632596cdcdf8'),
+    nombre_sede: 'Main Street Branch',
+    direccion_sede: '123 Main Street',
+    ciudad_sede: 'New York City'
+  }
+]
+inventario> var trancciones = { fecha_transaccion: '2004-05-26 10:15:00', metodo_de_pago: 'Tarjeta de crédito' }
+
+inventario> db.usuarios.insertOne(transacciones)
+ReferenceError: transacciones is not defined
+inventario> db.usuarios.insertOne(trancciones)
+{
+  acknowledged: true,
+  insertedId: ObjectId('6657b392e1aa632596cdcdf9')
+}
+inventario>
